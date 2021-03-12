@@ -24,4 +24,4 @@ def browser(request):
     browser = change_browser(request)
     yield browser
     print("\nquit browser..")
-    browser.quit()
+    #browser.quit()
