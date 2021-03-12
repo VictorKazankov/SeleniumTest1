@@ -5,7 +5,7 @@ class MainPageLocators:
     GUESTS_NUMBER_FIELD_TOGGLE = (By.ID, "xp__guests__toggle")
     PLUS_NUMBER_CHILDREN_BUTTON = (By.XPATH, "//button[@aria-describedby='group_children_desc']/span[text()='+']")
     AGE_CHILD_INPUT = (By.XPATH, "//select[@name='age']")
-    COUNT_AGE_CHILD_INPUT = (By.XPATH, "count(//select[@name='age'])")
+    COUNT_AGE_CHILD_INPUT = (By.XPATH, "//div[@class='sb-group__children__field clearfix']/select") # sb-group__children__field clearfix
     BUKOVEL_SMALL_POSTCARD = (By.XPATH, "//div[@class='promotion-postcard__small'][last()]")
 
 

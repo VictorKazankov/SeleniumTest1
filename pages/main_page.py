@@ -22,7 +22,7 @@ class MainPage(BasePage):
         assert age_child_input.first_selected_option.text
 
     def count_age_child_inputs(self, count_children):
-        count_input = len(MainPageLocators.COUNT_AGE_CHILD_INPUT)
+        count_input = len(self.get_element_presents(*MainPageLocators.COUNT_AGE_CHILD_INPUT))
         assert count_input == count_children
 
     def open_bukovel_hotel_list(self):
