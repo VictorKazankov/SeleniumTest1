@@ -13,6 +13,7 @@ class BasePage:
 
     def open(self):
         self.browser.get(self.url)
+        assert "Booking.com" in self.browser.title
         sleep(1)
 
     def element_not_present(self, how, what):

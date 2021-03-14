@@ -1,5 +1,7 @@
 import pytest
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 
 from pages.main_page import MainPage
 from pages.search_page import SearchPage
@@ -12,9 +14,9 @@ def pytest_addoption(parser):
 def change_browser(request):
     browser_name = request.config.getoption("--browser")
     if browser_name == "chrome":
-        br = webdriver.Chrome()
+        br = webdriver.Chrome(ChromeDriverManager().install())
     elif browser_name == "firefox":
-        br = webdriver.Firefox()
+        br = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     else:
         raise ValueError("Unrecognized browser {}".format(browser_name))
     return br

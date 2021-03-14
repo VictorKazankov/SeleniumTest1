@@ -2,3 +2,5 @@
 /.idea/
 /venv/
 /geckodriver.log
+/report.html
+/assets/
