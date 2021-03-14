@@ -14,15 +14,14 @@ class MainPage(BasePage):
         plus_button.click()
 
     def is_displayed_age_child_input(self):
-        #############??????#############
-        age_child_input = Select(self.get_element_present(*MainPageLocators.AGE_CHILD_INPUT))
+        return self.get_element_present(*MainPageLocators.AGE_CHILD_INPUT)
 
     def is_value_age_child_by_defult(self):
         age_child_input = Select(self.get_element_present(*MainPageLocators.AGE_CHILD_INPUT))
         assert age_child_input.first_selected_option.text
 
     def count_age_child_inputs(self, count_children):
-        count_input = len(self.get_element_presents(*MainPageLocators.COUNT_AGE_CHILD_INPUT))
+        count_input = len(self.get_elements_present(*MainPageLocators.COUNT_AGE_CHILD_INPUT))
         assert count_input == count_children
 
     def open_bukovel_hotel_list(self):

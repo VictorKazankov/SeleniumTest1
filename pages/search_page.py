@@ -34,6 +34,6 @@ class SearchPage(BasePage):
         search_button.click()
 
     def is_prices_for_every_result_items(self):
-        hotel_list = self.get_element_presents(*SearchPageLocators.HOTEL_RESULT_ITEMS)
+        hotel_list = self.get_elements_present(*SearchPageLocators.HOTEL_RESULT_ITEMS)
         for item in range(len(hotel_list)):
             assert 'UAH' in hotel_list[item].text

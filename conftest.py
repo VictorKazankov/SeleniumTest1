@@ -1,6 +1,8 @@
 import pytest
 from selenium import webdriver
 
+from pages.main_page import MainPage
+from pages.search_page import SearchPage
 
 
 def pytest_addoption(parser):
@@ -20,8 +22,21 @@ def change_browser(request):
 
 @pytest.fixture(scope="function")
 def browser(request):
-    print("\nstart chrome browser for test..")
     browser = change_browser(request)
     yield browser
-    print("\nquit browser..")
     browser.quit()
+
+
+@pytest.fixture()
+def main_page(browser):
+    main_page_url = "https://www.booking.com/"
+    main_page = MainPage(browser, main_page_url)
+    main_page.open()
+    return main_page
+
+
+@pytest.fixture()
+def search_page(browser, main_page):
+    main_page.open_bukovel_hotel_list()
+    search_page = SearchPage(browser, browser.current_url)
+    return search_page
