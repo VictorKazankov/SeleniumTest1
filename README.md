@@ -1,6 +1,6 @@
 ###### **Booking.com**
 
-Scenarios collection for testing follow fixtures:
+Scenarios collection for testing follow actions:
 1. User is able to specify age of each child
 2. User is required to specify booking date to see booking price
 
